@@ -56,10 +56,11 @@ education ／ listinginfo ／ socialnetwork ／ thirdparty ／ userinfo ／ webl
 #### 单模型训练及调参
 **LR with StratifiedKFold(k=10)**  
 Default Parameters  
-|        模型参数       |      CV        | ValidSet avg AUC | TestSet AUC result |
-|:--------------------:|:---------------------------------:|:-------:|:-------:|
-| {'penalty': 'l2', 'C': 0.003, 'class_weight': 'balanced', 'solver': 'sag'} | StratifiedKFold(shuffle=False) |  0.7551 +/- 0.0202  |  |
-| {'penalty': 'l2', 'C': 0.003, 'class_weight': 'balanced', 'solver': 'sag'} | StratifiedKFold(shuffle=True)  |  0.7685 +/- 0.0229  |  |
+
+|      模型参数      |      CV      | ValidSet avg AUC | TestSet AUC result |
+|:-----------------:|:------------:|:----------------:|:------------------:|
+| 'penalty': 'l2', 'C': 0.003, 'class_weight': 'balanced', 'solver': 'sag' | StratifiedKFold(shuffle=False) |  0.7551 +/- 0.0202  |  |
+| 'penalty': 'l2', 'C': 0.003, 'class_weight': 'balanced', 'solver': 'sag' | StratifiedKFold(shuffle=True)  |  0.7685 +/- 0.0229  |  |
 
 Tuning with HyperOpt  
 |        最优参数       |      CV        | testSet avg AUC |

@@ -63,32 +63,37 @@ Default Parameters
 | 'penalty': 'l2', 'C': 0.003, 'class_weight': 'balanced', 'solver': 'sag' | StratifiedKFold(shuffle=True)  |  0.7685 +/- 0.0229  |  |
 
 Tuning with HyperOpt  
+
 |        最优参数       |      CV        | testSet avg AUC |
 |:--------------------:|:---------------------------------:|:-------:|
-| {'C': 0.002450953481265099}  | StratifiedKFold(shuffle=False) |  0.7554 +/- 0.0202  |  
-| {'C': 0.003040794257300518}  | StratifiedKFold(shuffle=True)  |  0.7685 +/- 0.0229  |
+| 'C': 0.002450953481265099 | StratifiedKFold(shuffle=False) |  0.7554 +/- 0.0202  |
+| 'C': 0.003040794257300518 | StratifiedKFold(shuffle=True)  |  0.7685 +/- 0.0229  |
 
 **XGBoost with StratifiedKFold(k=10)**  
 Default Parameters  
-|        模型参数        |      CV    | testSet avg AUC |  
-|:--------------------:|:-----------:|:---------------:|  
-| {'colsample_bylevel': 1, 'eta': 0.05, 'max_depth': 3, 'lambda': 1, 'min_child_weight': 1, 'gamma': 0}     | StratifiedKFold(shuffle=False) |  0.5781 +/- 0.1568  |     
-| {'colsample_bylevel': 0.07, 'eta': 0.05, 'max_depth': 3, 'lambda': 50, 'min_child_weight': 1.5, 'gamma': 0.2} | StratifiedKFold(shuffle=False) |  0.7105 +/- 0.0330  |  
-| {'colsample_bylevel': 1, 'eta': 0.05, 'max_depth': 3, 'lambda': 1, 'min_child_weight': 1, 'gamma': 0}     | StratifiedKFold(shuffle=True)  |  0.7666 +/- 0.0162  |  
-| {'colsample_bylevel': 0.07, 'eta': 0.05, 'max_depth': 3, 'lambda': 50, 'min_child_weight': 1.5, 'gamma': 0.2} | StratifiedKFold(shuffle=True)  |  0.7724 +/- 0.0179  |  
-| {'subsample': 0.8, 'colsample_bytree': 0.8, 'colsample_bylevel': 1, 'eta': 0.1, 'max_depth': 5, 'lambda': 1, 'min_child_weight': 1, 'gamma': 0} | StratifiedKFold(shuffle=True)  |  0.7667 +/- 0.0169  |  
+
+|        模型参数        |      CV    | testSet avg AUC |
+|:--------------------:|:-----------:|:---------------:|
+| 'colsample_bylevel': 1, 'eta': 0.05, 'max_depth': 3, 'lambda': 1, 'min_child_weight': 1, 'gamma': 0     | StratifiedKFold(shuffle=False) |  0.5781 +/- 0.1568  |
+| 'colsample_bylevel': 0.07, 'eta': 0.05, 'max_depth': 3, 'lambda': 50, 'min_child_weight': 1.5, 'gamma': 0.2   | StratifiedKFold(shuffle=False) |  0.7105 +/- 0.0330  |
+| 'colsample_bylevel': 1, 'eta': 0.05, 'max_depth': 3, 'lambda': 1, 'min_child_weight': 1, 'gamma': 0     | StratifiedKFold(shuffle=True)  |  0.7666 +/- 0.0162  |
+| 'colsample_bylevel': 0.07, 'eta': 0.05, 'max_depth': 3, 'lambda': 50, 'min_child_weight': 1.5, 'gamma': 0.2   | StratifiedKFold(shuffle=True)  |  0.7724 +/- 0.0179  |
+| 'subsample': 0.8, 'colsample_bytree': 0.8, 'colsample_bylevel': 1, 'eta': 0.1, 'max_depth': 5, 'lambda': 1, 'min_child_weight': 1, 'gamma': 0 | StratifiedKFold(shuffle=True)  |  0.7667 +/- 0.0169  |
 
 Tuning Parameters (by HyperOpt)  
-|        模型参数        |      CV    | testSet avg AUC |  
-|:--------------------:|:-----------:|:---------------:|  
-| {'max_depth': 3,'subsample': 0.6,'min_child_weight': 2.77,'colsample_bytree': 0.7,'colsample_bylevel':0.1,'eta': 0.05} | StratifiedKFold(shuffle=False)  |  0.7131 +/- 0.0351  |  
-|{'max_depth': 3, 'subsample': 0.6, 'min_child_weight': 2.77, 'colsample_bytree': 0.7, 'colsample_bylevel':1,  'eta': 0.1} | StratifiedKFold(shuffle=True)  |   0.7722 +/- 0.0181  |  
+
+|        模型参数        |      CV    | testSet avg AUC |
+|:--------------------:|:-----------:|:---------------:|
+| 'max_depth': 3,'subsample': 0.6,'min_child_weight': 2.77,'colsample_bytree': 0.7,'colsample_bylevel':0.1,'eta': 0.05 | StratifiedKFold(shuffle=False)  |  0.7131 +/- 0.0351   |
+| 'max_depth': 3, 'subsample': 0.6, 'min_child_weight': 2.77, 'colsample_bytree': 0.7, 'colsample_bylevel':1,  'eta': 0.1  | StratifiedKFold(shuffle=True)   |   0.7722 +/- 0.0181  |
 
 Tuning Parameters (by HyperOpt) with StratifiedKFold(shuffle=True)  
-|        模型参数        |      CV    | testSet avg AUC |  
-|:--------------------:|:-----------:|:---------------:|  
-|{'max_depth': 3, 'subsample': 0.9, 'min_child_weight': 1.2, 'colsample_bytree': 0.2,'colsample_bylevel': 1.0, 'eta': 0.05, 'gamma': 0.3,'lambda': 1.0} | StratifiedKFold(shuffle=False)  |  0.5811 +/- 0.1416  |  
-|{'max_depth': 3, 'subsample': 0.9, 'min_child_weight': 1.2, 'colsample_bytree': 0.2,'colsample_bylevel': 1.0, 'eta': 0.05, 'gamma': 0.3,'lambda': 1.0} | StratifiedKFold(shuffle=True)  |   0.7723 +/- 0.0181  |  
+
+|        模型参数        |      CV    | testSet avg AUC |
+|:--------------------:|:-----------:|:---------------:|
+| 'max_depth': 3, 'subsample': 0.9, 'min_child_weight': 1.2, 'colsample_bytree': 0.2,'colsample_bylevel': 1.0, 'eta': 0.05, 'gamma': 0.3,'lambda': 1.0  | StratifiedKFold(shuffle=False)  |  0.5811 +/- 0.1416  |
+| 'max_depth': 3, 'subsample': 0.9, 'min_child_weight': 1.2, 'colsample_bytree': 0.2,'colsample_bylevel': 1.0, 'eta': 0.05, 'gamma': 0.3,'lambda': 1.0  | StratifiedKFold(shuffle=True)  |   0.7723 +/- 0.0181  |
+
 #### 多模型融合
 **Simple Average**
 
